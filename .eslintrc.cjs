@@ -22,6 +22,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'import/extensions': 'ignorePackages',
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off',
+    'import/first': 'off',
+    'class-methods-use-this': 'off',
   },
 };

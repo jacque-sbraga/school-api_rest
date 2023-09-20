@@ -1,21 +1,27 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+import './src/database/index.js';
+
 import express from 'express';
-import homeRoutes from './src/routes/homeRoutes.js'
+import homeRoutes from './src/routes/homeRoutes.js';
 
 class App {
-  constructor(){
+  constructor() {
     this.app = express();
     this.middlewares();
     this.routes();
   }
 
-  middlewares(){
-    this.app.use(express.urlencoded({extended:true}));
+  middlewares() {
+    this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
-  };
+  }
 
-  routes(){
+  routes() {
     this.app.use('/', homeRoutes);
-  };
+  }
 }
 
-export default new App().app
+export default new App().app;
